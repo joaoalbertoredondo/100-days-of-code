@@ -1,11 +1,18 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import BackPage from "../components/BackPage";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import image1 from "../../assets/add-to-bag/jersey1.png";
 import image2 from "../../assets/add-to-bag/jersey2.png";
 import image3 from "../../assets/add-to-bag/jersey3.png";
 
 function page() {
+  const img = [image1, image2, image3];
+  const [bigImage, setBigImage] = useState<StaticImageData>(image1);
+  const price = 105
+  const discount = 0.25
+
   return (
     <div className="my-20 md:h-scree p-5 md:flex md:justify-center md:items-center">
       <BackPage />
@@ -13,26 +20,22 @@ function page() {
       <div className="md:max-w-5xl w-full flex flex-col md:flex-row justify-between p-8 gap-4 bg-gray-200 rounded-2xl shadow-lg">
         <div className="flex flex-col md:flex-row gap-4 items-center md:items-start">
           <div className="flex md:flex-col gap-4 order-last md:order-none">
-            <Image
-              alt="image1"
-              src={image1}
-              className="h-20 w-16 md:h-20 md:w-16 rounded-lg object-cover opacity-60 hover:opacity-100 shadow-md"
-            />
-            <Image
-              alt="image2"
-              src={image2}
-              className="h-20 w-16 md:h-20 md:w-16 rounded-lg object-cover opacity-60 hover:opacity-100 shadow-md"
-            />
-            <Image
-              alt="image3"
-              src={image3}
-              className="h-20 w-16 md:h-20 md:w-16 rounded-lg object-cover opacity-60 hover:opacity-100 shadow-md"
-            />
+            {img.map((image: StaticImageData, index: number) => (
+              <Image
+                key={`image${index}`}
+                onClick={() => setBigImage(image)}
+                alt="image"
+                src={image}
+                className={`h-20 w-16 md:h-20 md:w-16 rounded-lg object-cover hover:opacity-100 shadow-md cursor-pointer opacity-${
+                  image === bigImage ? "100" : "60"
+                }`}
+              />
+            ))}
           </div>
           <div className="">
             <Image
               alt="image1"
-              src={image1}
+              src={bigImage}
               className="h-[300px] w-[240px] md:h-[600px] md:w-[400px] rounded-lg object-cover shadow-md"
             />
           </div>
@@ -56,14 +59,14 @@ function page() {
           <div>
             <div className="flex gap-2">
               <p className="font-extrabold text-xl md:text-3xl">
-                <span className="text-sm">$</span>105.00
+                <span className="text-sm">$</span>{price-(price*discount)}
               </p>
               <p className="bg-[#98bef8] text-[#2249fa] font-bold rounded-md py-1 px-2 text-xs flex items-center">
-                -25%
+                -{discount*100}%
               </p>
             </div>
             <p className="line-through text-gray-500">
-              <span>$</span>105,00
+              <span>$</span>{price}
             </p>
           </div>
 
