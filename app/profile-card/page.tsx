@@ -1,7 +1,5 @@
 import Avatar from "../../assets/profile-card/avatar.png";
-import { ArrowLeftOutlined } from "@ant-design/icons";
-import Link from "next/link";
-import ProfileCard from "../components/ProfileCard";
+import ProfileCard from "../components/ProfileCard/ProfileCard";
 import BackPage from "../components/BackPage";
 
 function page() {

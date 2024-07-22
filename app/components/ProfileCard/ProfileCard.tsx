@@ -1,13 +1,6 @@
-import {
-  FacebookFilled,
-  InstagramFilled,
-  LinkedinFilled,
-  OpenAIFilled,
-  XOutlined,
-} from "@ant-design/icons";
 import Image, { StaticImageData } from "next/image";
 import React from "react";
-import Avatar from "../../assets/profile-card/avatar.png";
+import Avatar from "../../../assets/profile-card/avatar.png";
 import Social, { SocialLink } from "./Social";
 
 interface Props {
