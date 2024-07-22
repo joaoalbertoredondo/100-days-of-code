@@ -10,6 +10,9 @@ function List() {
           <li>
             Day 01 - <Link href={"/profile-card"} className="hover:underline hover:text-orange-300">Profile Card</Link>
           </li>
+          <li>
+            Day 02 - <Link href={'/add-to-bag'} className="hover:underline hover:text-orange-300">Add to Bag</Link>
+          </li>
         </ul>
       </div>
     </div>
