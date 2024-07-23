@@ -16,6 +16,7 @@ function List() {
               Profile Card
             </Link>
           </li>
+
           <li>
             Day 02 -{" "}
             <Link
@@ -25,6 +26,7 @@ function List() {
               Add to Bag
             </Link>
           </li>
+
           <li>
             Day 03 -{" "}
             <Link
@@ -32,6 +34,16 @@ function List() {
               className="hover:underline hover:text-orange-300"
             >
               Mobile Navigation
+            </Link>
+          </li>
+
+          <li>
+            Day 04 -{" "}
+            <Link
+              href={"/contact-us"}
+              className="hover:underline hover:text-orange-300"
+            >
+              Contact Us
             </Link>
           </li>
         </ul>
