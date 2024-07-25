@@ -14,12 +14,11 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       fontFamily: {
-        merri: ["Merriweather"]
-      }
+        merri: ["Merriweather"],
+        ubuntu: ["Ubuntu"],
+      },
     },
   },
-  plugins: [
-    require('tailwind-scrollbar')
-  ],
+  plugins: [require("tailwind-scrollbar")],
 };
 export default config;

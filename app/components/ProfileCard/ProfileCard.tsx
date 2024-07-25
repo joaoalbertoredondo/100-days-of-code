@@ -41,11 +41,6 @@ export default function ProfileCard({
             {socials.map((social) => (
               <Social key={social.name} name={social.name} link={social.link} />
             ))}
-            {/* <FacebookFilled />
-            <LinkedinFilled />
-            <XOutlined />
-            <InstagramFilled />
-            <OpenAIFilled /> */}
           </div>
           <div>
             <p className="text-center font-semibold text-sm">

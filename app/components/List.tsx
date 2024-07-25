@@ -46,6 +46,26 @@ function List() {
               Contact Us
             </Link>
           </li>
+
+          <li>
+            Day 05 -{" "}
+            <Link
+              href={"/recipe"}
+              className="hover:underline hover:text-orange-300"
+            >
+              Recipe
+            </Link>
+          </li>
+
+          <li>
+            Day 06 -{" "}
+            <Link
+              href={"/image-carousel"}
+              className="hover:underline hover:text-orange-300"
+            >
+              Image Carousel
+            </Link>
+          </li>
         </ul>
       </div>
     </div>
