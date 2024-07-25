@@ -1,9 +1,14 @@
-import React from 'react'
+import React from "react";
+import ImageCarousel from "../components/ImageCarousel/ImageCarousel";
+import BackPage from "../components/BackPage";
 
 function page() {
   return (
-    <div>page</div>
-  )
+    <div>
+      <BackPage theme="dark" />
+      <ImageCarousel />
+    </div>
+  );
 }
 
-export default page
+export default page;

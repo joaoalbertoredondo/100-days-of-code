@@ -66,6 +66,16 @@ function List() {
               Image Carousel
             </Link>
           </li>
+
+          <li>
+            Day 07 -{" "}
+            <Link
+              href={"/create-account"}
+              className="hover:underline hover:text-orange-300"
+            >
+              Create Account
+            </Link>
+          </li>
         </ul>
       </div>
     </div>
