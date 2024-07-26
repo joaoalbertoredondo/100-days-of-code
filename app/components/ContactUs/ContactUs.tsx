@@ -63,7 +63,7 @@ function ContactUs() {
                 type="text"
                 placeholder="Name"
                 className="p-2 rounded-xl text-sm border border-gray-300 focus:outline-blue-400"
-                onChange={(e) => setName(e.target.value)}
+                
                 required
               />
 
