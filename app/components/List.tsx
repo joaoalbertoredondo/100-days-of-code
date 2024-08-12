@@ -76,6 +76,16 @@ function List() {
               Create Account
             </Link>
           </li>
+
+          <li>
+            Day 08 -{" "}
+            <Link
+              href={"/music-events"}
+              className="hover:underline hover:text-orange-300"
+            >
+              Music Events
+            </Link>
+          </li>
         </ul>
       </div>
     </div>

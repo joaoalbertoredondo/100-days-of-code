@@ -17,6 +17,8 @@ const config: Config = {
       fontFamily: {
         merri: ["Merriweather"],
         ubuntu: ["Ubuntu"],
+        baloo: ["Baloo 2"],
+        rowdies: ["Rowdies"],
       },
     },
   },
