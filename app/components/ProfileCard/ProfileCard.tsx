@@ -39,7 +39,7 @@ export default function ProfileCard({
           </div>
           <div className="flex gap-7 text-2xl">
             {socials.map((social) => (
-              <Social key={social.name} name={social.name} link={social.link} />
+              <Social key={social.name} name={social.name} />
             ))}
           </div>
           <div>

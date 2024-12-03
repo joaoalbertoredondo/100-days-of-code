@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import mapImage from "../../../assets/contact-us/map2.jpg"
+import mapImage from "../../../assets/contact-us/map2.jpg";
 import Image from "next/image";
 
 function ContactUs() {
@@ -49,7 +49,11 @@ function ContactUs() {
               <div className="absolute h-3 w-3 bg-[#FE007A] rounded-full mt-3 z-10"></div>
               <div className="absolute h-5 w-5 bg-[#FE007A]/30 rounded-full mt-3 animate-ping z-10"></div>
               <div className="absolute h-7 w-7 bg-[#FE007A]/20 rounded-full mt-3 animate-ping z-10"></div>
-              <Image src={mapImage} alt="" className="h-[14rem] opacity-50 rounded-2xl object-none z-0"/>
+              <Image
+                src={mapImage}
+                alt=""
+                className="h-[14rem] opacity-50 rounded-2xl object-none z-0"
+              />
             </div>
           </div>
         </div>
@@ -63,7 +67,7 @@ function ContactUs() {
                 type="text"
                 placeholder="Name"
                 className="p-2 rounded-xl text-sm border border-gray-300 focus:outline-blue-400"
-                
+                onChange={(e) => setName(e.target.value)}
                 required
               />
 

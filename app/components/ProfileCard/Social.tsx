@@ -9,29 +9,39 @@ import React from "react";
 
 export interface SocialLink {
   name: string;
-  link: string;
 }
 
-export default function Social({ name, link }: SocialLink) {
-  let Image;
+export default function Social({ name }: SocialLink) {
+  let Icon;
+  let link;
   switch (name) {
     case "facebook":
-      Image = FacebookFilled;
+      Icon = FacebookFilled;
+      link = "https://www.facebook.com/";
       break;
     case "linkedin":
-      Image = LinkedinFilled;
+      Icon = LinkedinFilled;
+      link = "https://www.linkedin.com/";
       break;
     case "x":
-      Image = XOutlined;
+      Icon = XOutlined;
+      link = "https://x.com";
       break;
     case "instagram":
-      Image = InstagramFilled;
+      Icon = InstagramFilled;
+      link = "https://instagram.com";
       break;
     case "openai":
-      Image = OpenAIFilled;
+      Icon = OpenAIFilled;
+      link = "https://openai.com";
       break;
     default:
       break;
   }
-  return <a href={link}>{Image && <Image />}</a>;
+
+  return (
+    <a href={link} target="_blank">
+      {Icon && <Icon />}
+    </a>
+  );
 }

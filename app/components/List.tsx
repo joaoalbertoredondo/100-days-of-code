@@ -63,7 +63,7 @@ function List() {
               href={"/image-carousel"}
               className="hover:underline hover:text-orange-300"
             >
-              Image Carousel
+              Image Carousel (bugado)
             </Link>
           </li>
 
@@ -84,6 +84,16 @@ function List() {
               className="hover:underline hover:text-orange-300"
             >
               Music Events
+            </Link>
+          </li>
+
+          <li>
+            Day 09 -{" "}
+            <Link
+              href={"/password-generator"}
+              className="hover:underline hover:text-orange-300"
+            >
+              Password Generator
             </Link>
           </li>
         </ul>
