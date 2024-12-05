@@ -1,79 +1,81 @@
+"use client";
+
+import therato from "../../../assets/image-carousel/therato.jpg";
+import eberhardgross from "../../../assets/image-carousel/eberhardgross.jpg";
+import padrinan from "../../../assets/image-carousel/padrinan.jpg";
+import iriser from "../../../assets/image-carousel/iriser.jpg";
+import eberhardgross1 from "../../../assets/image-carousel/eberhardgross1.jpg";
+import brettSayles from "../../../assets/image-carousel/brett-sayles.jpg";
+
 import Image from "next/image";
-import React from "react";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { useState } from "react";
+import { BsCaretLeft, BsCaretRight } from "react-icons/bs";
 
-import brett from "../../../assets/image-carousel/brett-sayles.jpg";
+export default function ImageCarousel() {
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-function ImageCarousel() {
+  const images = [
+    therato,
+    eberhardgross,
+    padrinan,
+    iriser,
+    eberhardgross1,
+    brettSayles,
+  ];
+
+  function handlePreviousSlide() {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    );
+  }
+
+  function handleNextSlide() {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === images.length - 1 ? 0 : prevIndex + 1
+    );
+  }
+
   return (
-    <div className="bg-stone-800 text-slate-100 h-screen flex items-center justify-center">
-      <div className="bg-stone-950/80 w-full flex flex-col gap-16 p-10">
-        <div className="flex items-center justify-center gap-2 md:gap-8">
-          <div className="h-full w-7 p-5">
-            <FaArrowLeft className="cursor-pointer hover:text-stone-400" />
-          </div>
+    <div className="flex flex-col gap-12 items-center justify-center bg-stone-800 text-slate-100 h-screen">
+      <div className="flex gap-4">
+        <button onClick={handlePreviousSlide}>
+          <BsCaretLeft size={80} />
+        </button>
 
-          <div>
-            <Image
-              alt=""
-              src={brett}
-              width={800}
-              className="object-none h-[280px] w-[500px] md:h-[400px] md:w-[800px]"
-            />
-          </div>
-
-          <div className="h-full w-7 p-5">
-            <FaArrowRight className="cursor-pointer hover:text-stone-400" />
-          </div>
+        <div>
+          <Image
+            src={images[currentIndex]}
+            alt=""
+            width={800}
+            className="h-[500px] rounded-md shadow-lg object-cover"
+          />
         </div>
 
-        <div className="w-full h-[150px] flex justify-center gap-3">
-          <Image
-            alt=""
-            src={brett}
-            height={200}
-            width={150}
-            className="object-cover"
-          />
-          <Image
-            alt=""
-            src={brett}
-            height={200}
-            width={150}
-            className="object-cover"
-          />
-          <Image
-            alt=""
-            src={brett}
-            height={200}
-            width={150}
-            className="object-cover"
-          />
-          <Image
-            alt=""
-            src={brett}
-            height={200}
-            width={150}
-            className="object-cover"
-          />
-          <Image
-            alt=""
-            src={brett}
-            height={200}
-            width={150}
-            className="object-cover"
-          />
-          <Image
-            alt=""
-            src={brett}
-            height={200}
-            width={150}
-            className="object-cover"
-          />
-        </div>
+        <button onClick={handleNextSlide}>
+          <BsCaretRight size={80} />
+        </button>
+      </div>
+
+      <div className="flex gap-4">
+        {images.map((img, index) => {
+          return (
+            <button
+              key={index}
+              onClick={() => setCurrentIndex(index)}
+              className={`rounded-sm ${
+                index === currentIndex ? "opacity-100" : "opacity-40"
+              } transition-opacity duration-300`}
+            >
+              <Image
+                src={img}
+                alt=""
+                width={150}
+                className="object-cover rounded-md"
+              />
+            </button>
+          );
+        })}
       </div>
     </div>
   );
 }
-
-export default ImageCarousel;

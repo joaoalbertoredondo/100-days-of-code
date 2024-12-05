@@ -1,6 +1,6 @@
 import React from "react";
-import ImageCarousel from "../components/ImageCarousel/ImageCarousel";
 import BackPage from "../components/BackPage";
+import ImageCarousel from "../components/ImageCarousel/ImageCarousel";
 
 function page() {
   return (

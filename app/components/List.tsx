@@ -63,7 +63,7 @@ function List() {
               href={"/image-carousel"}
               className="hover:underline hover:text-orange-300"
             >
-              Image Carousel (bugado)
+              Image Carousel
             </Link>
           </li>
 
